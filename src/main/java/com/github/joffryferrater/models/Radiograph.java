@@ -1,7 +1,8 @@
 package com.github.joffryferrater.models;
 
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Table(name="radiographs")
 public class Radiograph {
 
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id 
+	@Column(name="RAD_ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@JsonProperty("Reason")
 	private String reason;
@@ -73,6 +76,5 @@ public class Radiograph {
 		this.dateOfTest = dateOfTest;
 	}
 
-	
-	
+
 }
