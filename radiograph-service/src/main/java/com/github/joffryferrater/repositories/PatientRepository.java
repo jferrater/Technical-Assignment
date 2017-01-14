@@ -1,6 +1,8 @@
 package com.github.joffryferrater.repositories;
 
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -19,5 +21,8 @@ public interface PatientRepository  extends CrudRepository<Patient, Long>{
 
  	@RequestMapping(method=RequestMethod.GET, path="/{socialSecurityNumber}")
 	Patient findBySocialSecurityNumber(@Param("socialSecurityNumber")String socialSecurityNumber);
+ 	
+ 	@RequestMapping(method=RequestMethod.GET, path="/{doctorUsername}")
+ 	List<Patient> findPatientsByDoctor(@Param("doctorUsername") String doctorUsername);
 
 }

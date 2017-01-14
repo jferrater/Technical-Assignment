@@ -1,7 +1,6 @@
 package com.github.joffryferrater;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -33,17 +32,34 @@ public class RadiographServiceApplication {
 	@Autowired
 	PatientRepository patientRepo;
 	
+	/*
+	 * Default sample data.
+	 */
 	@PostConstruct
 	public void init() {
+		final String JAMES = "James";
+		final String BOND = "Bond";
 		List<Doctor> doctors = new ArrayList<Doctor>();
-		doctors.add(new Doctor("James"));
-		doctors.add(new Doctor("Bond"));
+		doctors.add(new Doctor(JAMES));
+		doctors.add(new Doctor(BOND));
 		doctors.forEach(doctor -> doctorRepo.save(doctor));
 		
+		//Patient 1 data
 		List<Radiograph> radiographs = new ArrayList<Radiograph>();
-		Radiograph result1 = new Radiograph("Not feeling well", "Radiograph of Joffry", new Date());
+		Radiograph result1 = new Radiograph("Not feeling well", "Radiograph of Joffry");
 		radiographs.add(result1);
 		Patient patient1 = new Patient("19850127", "Joffry", "Ferrater", 31, radiographs);
+		result1.setPatient(patient1);
+		patient1.setDoctor(JAMES);
 		patientRepo.save(patient1);
+		
+		//Patient 2 data
+		List<Radiograph> radiographs2 = new ArrayList<Radiograph>();
+		Radiograph result2 = new Radiograph("Cough", "Radiograph of Kumar");
+		radiographs2.add(result2);
+		Patient patient2 = new Patient("19830317", "Mirtunjay", "Kumar", 33, radiographs2);
+		result2.setPatient(patient2);
+		patient2.setDoctor(BOND);
+		patientRepo.save(patient2);
 	}
 }

@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -37,9 +36,10 @@ public class Patient {
 	private String familyName;
 	@JsonProperty("Age")
 	private int age;
+	@JsonProperty("Doctor")
+	private String doctor;
 	@JsonProperty("Radiograph Results")
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="RAD_ID")
+	@OneToMany(mappedBy="patient", cascade=CascadeType.ALL)
 	private List<Radiograph> radiographs;
 	
 	public Patient() {
@@ -102,7 +102,13 @@ public class Patient {
 	public void setRadiographs(List<Radiograph> radiographs) {
 		this.radiographs = radiographs;
 	}
-	
-	
-	
+
+	public String getDoctor() {
+		return doctor;
+	}
+
+	public void setDoctor(String doctor) {
+		this.doctor = doctor;
+	}
+		
 }
