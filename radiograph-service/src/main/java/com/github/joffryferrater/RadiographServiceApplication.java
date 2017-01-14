@@ -44,7 +44,7 @@ public class RadiographServiceApplication {
 		doctors.add(new Doctor(BOND));
 		doctors.forEach(doctor -> doctorRepo.save(doctor));
 		
-		//Patient 1 data
+		//Dr. James' Patient 1 data
 		List<Radiograph> radiographs = new ArrayList<Radiograph>();
 		Radiograph result1 = new Radiograph("Not feeling well", "Radiograph of Joffry");
 		radiographs.add(result1);
@@ -53,7 +53,7 @@ public class RadiographServiceApplication {
 		patient1.setDoctor(JAMES);
 		patientRepo.save(patient1);
 		
-		//Patient 2 data
+		//Dr. Bond's Patient 2 data
 		List<Radiograph> radiographs2 = new ArrayList<Radiograph>();
 		Radiograph result2 = new Radiograph("Cough", "Radiograph of Kumar");
 		radiographs2.add(result2);
@@ -61,5 +61,13 @@ public class RadiographServiceApplication {
 		result2.setPatient(patient2);
 		patient2.setDoctor(BOND);
 		patientRepo.save(patient2);
+		
+		List<Radiograph> radiographs3 = new ArrayList<Radiograph>();
+		Radiograph result3 = new Radiograph("Difficult to breath", "Jolly Jae first checkup");
+		radiographs3.add(result3);
+		Patient patient3 = new Patient("19800912", "Jolly Jae", "Ompod", 36, radiographs3);
+		result3.setPatient(patient3);
+		patient3.setDoctor(BOND);
+		patientRepo.save(patient3);
 	}
 }

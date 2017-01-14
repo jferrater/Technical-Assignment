@@ -20,9 +20,11 @@ import com.github.joffryferrater.models.Patient;
 public interface PatientRepository  extends CrudRepository<Patient, Long>{
 
  	@RequestMapping(method=RequestMethod.GET, path="/{socialSecurityNumber}")
+ 	@RestResource(path="patient", rel="patient")
 	Patient findBySocialSecurityNumber(@Param("socialSecurityNumber")String socialSecurityNumber);
  	
- 	@RequestMapping(method=RequestMethod.GET, path="/{doctorUsername}")
- 	List<Patient> findPatientsByDoctor(@Param("doctorUsername") String doctorUsername);
+ 	@RequestMapping(method=RequestMethod.GET, path="/{doctor}")
+ 	@RestResource(path="patients", rel="patients")
+ 	List<Patient> findPatientsByDoctor(@Param("doctor") String doctor);
 
 }

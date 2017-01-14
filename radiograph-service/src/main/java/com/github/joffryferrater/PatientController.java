@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityLinks;
-import org.springframework.hateoas.ExposesResourceFor;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpEntity;
@@ -23,8 +22,12 @@ import com.github.joffryferrater.models.Radiograph;
 import com.github.joffryferrater.repositories.PatientRepository;
 import com.github.joffryferrater.repositories.RadiographRepository;
 
+/**
+ * 
+ * @author Joffry Ferrater
+ *
+ */
 @RestController
-@ExposesResourceFor(Patient.class)
 public class PatientController {
 	
 	@Autowired
@@ -56,6 +59,7 @@ public class PatientController {
         Resource<Radiograph> resource = new Resource<Radiograph>(newRadiograph);
         resource.add(this.entityLinks.linkToSingleResource(Radiograph.class, 
         		newRadiograph.getId()));
+        resource.add(this.entityLinks.linkToSingleResource(Patient.class, PATIENT_ID));
 		return new ResponseEntity<Resource<Radiograph>>(resource, HttpStatus.OK);
     }
 
