@@ -1,22 +1,73 @@
-<form class="form-horizontal">
-  <div class="form-group">
-    <div class="col-sm-5">
-      <input type="text" class="form-control" placeholder="First Name">
+<div [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()" #patientForm="ngForm" class="form-horizontal">
+    <div>
+      <strong>Patient Form</strong>
+      {{diagnostic}}
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-5">
-      <input type="text" class="form-control" placeholder="Last Name">
+    <div class="form-group">
+      <div class="col-sm-5">
+        <input type="text" class="form-control" placeholder="First Name" id="firstname" required
+            [(ngModel)]="patientModel.FirstName" name="firstName" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+              class="alert alert-danger">
+            First Name is required
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-5">
-      <input type="number" class="form-control" placeholder="Age">
+    <div class="form-group">
+      <div class="col-sm-5">
+        <input type="text" class="form-control" placeholder="Last Name" id="lastname" required
+            [(ngModel)]="patientModel.LastName" name="lastName">
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2">
-      <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+      <div class="col-sm-5">
+        <input type="number" class="form-control" placeholder="Age" id="age" required
+            [(ngModel)]="patientModel.Age" name="age">
+      </div>
     </div>
+    <div class="form-group">
+      <div class="col-sm-5">
+        <input type="text" class="form-control" placeholder="Social Security Number" id="ssn" required
+            [(ngModel)]="patientModel.SocialSecurityNumber" name="ssn">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-5">
+        <input type="text" class="form-control" placeholder="Doctor" id="doctor" required
+            [(ngModel)]="patientModel.Doctor" name="doctor">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2">
+        <button type="submit" class="btn btn-default" [disabled]="!patientForm.form.valid">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">First Name</div>
+    <div class="col-xs-9  pull-left">{{ patientModel.FirstName }}</div>
   </div>
-</form>
+  <div class="row">
+    <div class="col-xs-3">Last Name</div>
+    <div class="col-xs-9 pull-left">{{ patientModel.LastName }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Age</div>
+    <div class="col-xs-9 pull-left">{{ patientModel.Age }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Social Security Number</div>
+    <div class="col-xs-9 pull-left">{{ patientModel.SocialSecurityNumber }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Doctor</div>
+    <div class="col-xs-9 pull-left">{{ patientModel.Doctor }}</div>
+  </div>
+  <br>
+  <button class="btn btn-default" (click)="submitted=false">Edit</button>
+</div>
