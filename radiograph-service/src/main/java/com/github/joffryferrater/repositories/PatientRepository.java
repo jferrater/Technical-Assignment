@@ -21,7 +21,7 @@ public interface PatientRepository  extends CrudRepository<Patient, Long>{
 
  	@RequestMapping(method=RequestMethod.GET, path="/{socialSecurityNumber}")
  	@RestResource(path="patient", rel="patient")
-	Patient findBySocialSecurityNumber(@Param("socialSecurityNumber")String socialSecurityNumber);
+	List<Patient> findBySocialSecurityNumber(@Param("socialSecurityNumber")String socialSecurityNumber);
  	
  	@RequestMapping(method=RequestMethod.GET, path="/{doctor}")
  	@RestResource(path="patients", rel="patients")

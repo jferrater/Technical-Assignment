@@ -28,17 +28,17 @@ public class Patient {
 	@JsonProperty("Id")
 	@Column(name="PATIENT_ID")
 	private Long id;
-	@JsonProperty("Social Security No.")
+	@JsonProperty("SocialSecurityNumber")
 	private String socialSecurityNumber;
-	@JsonProperty("First Name")
+	@JsonProperty("FirstName")
 	private String firstName;
-	@JsonProperty("Last Name")
+	@JsonProperty("LastName")
 	private String familyName;
 	@JsonProperty("Age")
 	private int age;
 	@JsonProperty("Doctor")
 	private String doctor;
-	@JsonProperty("Radiograph Results")
+	@JsonProperty("RadiographResults")
 	@OneToMany(mappedBy="patient", cascade=CascadeType.ALL)
 	private List<Radiograph> radiographs;
 	

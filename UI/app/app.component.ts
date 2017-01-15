@@ -7,4 +7,14 @@ import { RadiographService } from './services/radiograph.services';
   templateUrl: 'app.component.html',
   providers: [RadiographService]
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent  {
+    
+
+    
+    constructor(private _radiographService: RadiographService) {
+    }
+
+
+ }
+
+

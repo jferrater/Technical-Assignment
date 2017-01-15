@@ -41,7 +41,7 @@ public class Radiograph {
 	@JsonIgnore
 	private Patient patient;
 
-	@JsonProperty("Date of Test")
+	@JsonProperty("DateOfTest")
 	private String dateOfTest;
 	
 	public Radiograph(String reason, String description) {
