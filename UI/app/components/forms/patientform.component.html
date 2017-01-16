@@ -1,8 +1,7 @@
 <div [hidden]="submitted">
-  <form (ngSubmit)="onSubmit()" #patientForm="ngForm" class="form-horizontal">
+  <form (ngSubmit)="addPatient()" #patientForm="ngForm" class="form-horizontal">
     <div>
       <strong>Patient Form</strong>
-      {{diagnostic}}
     </div>
     <div class="form-group">
       <div class="col-sm-5">
@@ -17,25 +16,41 @@
     <div class="form-group">
       <div class="col-sm-5">
         <input type="text" class="form-control" placeholder="Last Name" id="lastname" required
-            [(ngModel)]="patientModel.LastName" name="lastName">
+            [(ngModel)]="patientModel.LastName" name="lastName" #lastName="ngModel">
+          <div [hidden]="lastName.valid || lastName.pristine"
+              class="alert alert-danger">
+            Last Name is required
+          </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-5">
         <input type="number" class="form-control" placeholder="Age" id="age" required
-            [(ngModel)]="patientModel.Age" name="age">
+            [(ngModel)]="patientModel.Age" name="age" #age="ngModel">
+          <div [hidden]="age.valid || age.pristine"
+              class="alert alert-danger">
+            Age is required
+          </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-5">
         <input type="text" class="form-control" placeholder="Social Security Number" id="ssn" required
-            [(ngModel)]="patientModel.SocialSecurityNumber" name="ssn">
+            [(ngModel)]="patientModel.SocialSecurityNumber" name="ssn" #ssnum="ngModel">
+          <div [hidden]="ssnum.valid || ssnum.pristine"
+              class="alert alert-danger">
+            Social Security Number is required
+          </div>
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-5">
         <input type="text" class="form-control" placeholder="Doctor" id="doctor" required
-            [(ngModel)]="patientModel.Doctor" name="doctor">
+            [(ngModel)]="patientModel.Doctor" name="doctor" #doctor="ngModel">
+          <div [hidden]="doctor.valid || doctor.pristine"
+              class="alert alert-danger">
+            Doctor is required
+          </div>
       </div>
     </div>
     <div class="form-group">
@@ -47,27 +62,41 @@
 </div>
 
 <div [hidden]="!submitted">
-  <h2>You submitted the following:</h2>
-  <div class="row">
-    <div class="col-xs-3">First Name</div>
-    <div class="col-xs-9  pull-left">{{ patientModel.FirstName }}</div>
+  <div *ngIf="patient">
+    <h3>Patient is added. You may add Radiograph data for this patient.</h3>
+    <div class="row">
+      <div class="col-xs-3"><strong>Id</strong></div>
+      <div class="col-xs-9  pull-left">{{ patient.Id }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3"><strong>First Name</strong></div>
+      <div class="col-xs-9  pull-left">{{ patient.FirstName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3"><strong>Last Name</strong></div>
+      <div class="col-xs-9 pull-left">{{ patient.LastName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3"><strong>Age</strong></div>
+      <div class="col-xs-9 pull-left">{{ patient.Age }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3"><strong>Social Security Number</strong></div>
+      <div class="col-xs-9 pull-left">{{ patient.SocialSecurityNumber }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3"><strong>Doctor</strong></div>
+      <div class="col-xs-9 pull-left">{{ patient.Doctor }}</div>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-xs-3">Last Name</div>
-    <div class="col-xs-9 pull-left">{{ patientModel.LastName }}</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3">Age</div>
-    <div class="col-xs-9 pull-left">{{ patientModel.Age }}</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3">Social Security Number</div>
-    <div class="col-xs-9 pull-left">{{ patientModel.SocialSecurityNumber }}</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3">Doctor</div>
-    <div class="col-xs-9 pull-left">{{ patientModel.Doctor }}</div>
-  </div>
+
   <br>
-  <button class="btn btn-default" (click)="submitted=false">Edit</button>
+  <div>
+    <radiographform></radiographform>
+    <button class="btn btn-default" (click)="backToHome()">Back</button>
 </div>
+</div>
+
+
+
+

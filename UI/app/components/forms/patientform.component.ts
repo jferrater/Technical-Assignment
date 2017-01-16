@@ -11,25 +11,23 @@ export class PatientFormComponent  {
 
     patient: Object;
     submitted = false;
+    addedRadiograph=false;
     patientModel = new Patient("", "", null, "","");
+
     constructor(private _radiographService: RadiographService) {
 
     }
  
-   onSubmit() {
+   addPatient() {
        this.submitted = true;
-       console.log(this.patientModel.FirstName);
-       console.log(this.patientModel.LastName);
-       console.log(this.patientModel.Age);
-       console.log(this.patientModel.Doctor);
        this._radiographService.addPatient(this.patientModel).subscribe(patient=>{
            this.patient = patient;
-           console.log(this.patient);
        });
 
    }
 
-   get diagnostic() {
-       return JSON.stringify(this.patientModel);
+   backToHome() {
+       console.log("Returning home page");
    }
+
 }

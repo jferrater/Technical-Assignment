@@ -9,7 +9,9 @@ import { RadiographService } from '../../services/radiograph.services';
 export class PatientsComponent  {
     patients: Array<Object>;
     ssnumber: any;
-    result: Object;
+    patient: any;
+    radiographs: Array<Object>;
+
     constructor(private _radiographService: RadiographService) {
         this.ssnumber="";
     }
@@ -24,10 +26,20 @@ export class PatientsComponent  {
  
      searchPatient() {
         console.log("Searching patient by social security number");
-        this._radiographService.searchPatient(this.ssnumber).subscribe(patient=>{
-        console.log(patient);
-        this.patients = patient._embedded.patients;
+        this.radiographs = null;
+        return this._radiographService.searchPatient(this.ssnumber).subscribe(patient=>{
+            this.patients = patient._embedded.patients;
+            console.log(this.patients);
 
       });
+    }
+
+    onClickViewRadiographs() {
+         this.patient = this.patients[0];
+         return this._radiographService.showRadiographsByPatientId(this.patient.Id).subscribe(radiograph=>{
+              console.log(radiograph._embedded.radiographs);
+              this.radiographs = radiograph._embedded.radiographs;
+            
+         });
     }
 }

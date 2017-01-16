@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
 import { Patient } from '../models/patient';
+import { Radiograph } from '../models/radiograph';
 
 import 'rxjs/add/operator/map';
 
@@ -22,12 +23,26 @@ export class RadiographService {
             .map(res => res.json());
     }
     
+    showRadiographsByPatientId(_id: string) {
+        return this._http.get("http://localhost:8888/patients/"+_id+"/radiographs")
+            .map(res => res.json());
+    }
+
     addPatient(patientModel:Patient) {
         var json = JSON.stringify(patientModel);
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this._http.post("http://localhost:8888/patients", json, {
             headers: headers
-        }).map(res=>res.json);
+        }).map(res=>res.json());
+    }
+
+    addRadiograph(_id:string, radiographModel:Radiograph) {
+        var json = JSON.stringify(radiographModel);
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post("http://localhost:8888/patients/"+_id+"/radiographs", json, {
+            headers: headers
+        }).map(res=>res.json());
     }
 }

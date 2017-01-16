@@ -63,6 +63,7 @@ public class PatientController {
 		return new ResponseEntity<Resource<Radiograph>>(resource, HttpStatus.OK);
     }
 
+    
     @RequestMapping(method = RequestMethod.GET, 
     		        produces = MediaType.APPLICATION_JSON_VALUE, 
     		        value = "/patients/{PATIENT_ID}/radiographs")
