@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { Location }                 from '@angular/common';
+
 import { RadiographService } from '../../services/radiograph.services';
 import { Patient } from '../../models/patient';
 
@@ -14,7 +17,10 @@ export class PatientFormComponent  {
     addedRadiograph=false;
     patientModel = new Patient("", "", null, "","");
 
-    constructor(private _radiographService: RadiographService) {
+    constructor(  
+            private route: ActivatedRoute,
+            private location: Location,
+            private _radiographService: RadiographService) {
 
     }
  
@@ -28,6 +34,7 @@ export class PatientFormComponent  {
 
    backToHome() {
        console.log("Returning home page");
+       this.location.back();
    }
 
 }

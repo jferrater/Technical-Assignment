@@ -1,3 +1,5 @@
+<div class="container">
+
 <div [hidden]="submitted">
   <form (ngSubmit)="addPatient()" #patientForm="ngForm" class="form-horizontal">
     <div>
@@ -39,7 +41,7 @@
             [(ngModel)]="patientModel.SocialSecurityNumber" name="ssn" #ssnum="ngModel">
           <div [hidden]="ssnum.valid || ssnum.pristine"
               class="alert alert-danger">
-            Social Security Number is required
+            Social Security Number is required. 
           </div>
       </div>
     </div>
@@ -93,9 +95,11 @@
   <br>
   <div>
     <radiographform></radiographform>
-    <button class="btn btn-default" (click)="backToHome()">Back</button>
+    <button class="btn btn-default" (click)="backToHome()">Home</button>
 </div>
 </div>
+</div>
+
 
 
 
