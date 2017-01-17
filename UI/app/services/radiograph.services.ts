@@ -45,4 +45,9 @@ export class RadiographService {
             headers: headers
         }).map(res=>res.json());
     }
+
+    getPatient(id:string) {
+        return this._http.get("http://localhost:8888/patients/"+id)
+            .map(res => res.json());
+    }
 }

@@ -1,13 +1,14 @@
+<div class="container">
 <div class="row">
     <div class="col-md-12">
         <form class="well">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search patient. Enter patient's Social Security Number (yyyymmdd)..." [(ngModel)]="ssnumber" name="ssnumber" (keyup)="searchPatient()">
-            <br>
-            <div class="btn-group" role="group" aria-label="...">
-                <a href="/addPatient" class="btn btn-primary btn-sm" role="button">Add Patient</a>
-                <button type="button"class="btn btn-primary btn-sm" (click)="patientList()">Patients</button>
-            </div>
+                <br>
+                <div class="btn-toolbar" role="group" aria-label="...">
+                    <a href="/addPatient" class="btn btn-primary btn-sm" role="button">Add Patient</a>
+                    <button type="button"class="btn btn-primary btn-sm" (click)="patientList()">Patients</button>
+                </div>
             </div>
         </form>
     </div>
@@ -20,57 +21,19 @@
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-3"><strong>Id</strong></div>
-                    <div class="col-xs-9 pull-left">{{patient.Id}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-3"><strong>Social Security Number</strong></div>
-                    <div class="col-xs-9 pull-left">{{patient.SocialSecurityNumber}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-3"><strong>Age</strong></div>
-                    <div class="col-xs-9 pull-left">{{patient.Age}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-3"><strong>Doctor</strong></div>
-                    <div class="col-xs-9 pull-left">{{patient.Doctor}}</div>
-                </div>
-                <br>
-                <div class="row">
-                <ul class="list-group">
-                    <div class="col-md-1">
-                    <button type="button" class="btn btn-info btn-sm" (click)="onClickViewRadiographs()">View Radiographs Data</button> 
-                    </div>
-                </ul>
-                <br>
-                <div *ngIf="radiographs">
-                    <div *ngFor="let radiograph of radiographs">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Radiograph</h3>
+                    <div class="col-md-5">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-info btn-sm"><a routerLink="/patient/{{patient.Id}}"> View Patient Details</a></button>
                             </div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-xs-3"><strong>Date of Test</strong></div>
-                                    <div class="col-xs-9 pull-left">{{ radiograph.DateOfTest }}</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-3"><strong>Reason</strong></div>
-                                    <div class="col-xs-9 pull-left">{{ radiograph.Reason }}</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-3"><strong>Description</strong></div>
-                                    <div class="col-xs-9 pull-left">{{ radiograph.Description }}</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
+                    <div class="col-md-7">
+                        <p><strong>Doctor: </strong>{{patient.Doctor}}</p>
+                    </div>
             </div>
         </div>
-
     </div>
+  </div>
 </div>
+
 
 

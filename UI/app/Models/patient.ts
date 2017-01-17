@@ -1,7 +1,10 @@
 export class Patient {
-    firstName: string;
-    lastName: string;
-    age: number;
-    doctor: string;
 
+    constructor(
+        public FirstName: string,
+        public LastName: string,
+        public Age: number,
+        public SocialSecurityNumber: string,
+        public Doctor: string
+    ) {   }
 }

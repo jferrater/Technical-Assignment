@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { Location }                 from '@angular/common';
+
 import { RadiographService } from '../../services/radiograph.services';
 import { Radiograph } from '../../models/radiograph';
 import { Patient } from '../../models/patient';
 import { PatientFormComponent } from './patientform.component';
+
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +21,10 @@ export class RadiographFormComponent  {
     added=false;
     result = Object;
 
-    constructor(private _radiographService: RadiographService, private patientFrom:PatientFormComponent) {
+    constructor(private _radiographService: RadiographService, 
+                private patientFrom:PatientFormComponent,
+                private route: ActivatedRoute,
+                private location: Location) {
 
     }
 

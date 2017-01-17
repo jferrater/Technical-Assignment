@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
-import { RouterModule } from '@angular/router';
 
-import { RadiographsComponent } from './components/radiographs/radiographs.component';
+import {routing} from './app.routing';
 import { PatientsComponent } from './components/patients/patients.component';
+import { PatientComponent } from './components/patient/patient.component';
 import { PatientFormComponent } from './components/forms/patientform.component';
 import { RadiographFormComponent } from './components/forms/radiographform.component';
 
@@ -15,27 +15,14 @@ import { RadiographFormComponent } from './components/forms/radiographform.compo
                   BrowserModule, 
                   HttpModule, 
                   FormsModule,
-                  RouterModule.forRoot([
-                      {
-                        path: "addPatient",
-                        component: PatientFormComponent
-                      },
-                      {
-                        path: 'dashboard',
-                        component: PatientsComponent
-                      },
-                     {
-                        path: '',
-                        redirectTo: '/dashboard',
-                        pathMatch: 'full'
-                      },
-                    ]) 
+                  routing
+ 
                 ],
   declarations: [ AppComponent,
                   PatientsComponent,
-                  RadiographsComponent,
                   PatientFormComponent,
-                  RadiographFormComponent
+                  RadiographFormComponent,
+                  PatientComponent,
                 ],
   bootstrap:    [ AppComponent ]
 })
