@@ -29,6 +29,7 @@ public class Patient {
 	@Column(name="PATIENT_ID")
 	private Long id;
 	@JsonProperty("SocialSecurityNumber")
+	@Column(unique=true)
 	private String socialSecurityNumber;
 	@JsonProperty("FirstName")
 	private String firstName;
