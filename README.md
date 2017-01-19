@@ -15,8 +15,8 @@ Technical assignment
 <lo>
    <li>$ git clone https://github.com/jferrater/Technical-Assignment.git</li>
    <li>$ cd radiograph-service</li>
-   <li>$ java -jar radiograph-service-0.0.1-SNAPSHOT.jar
-</li>
+   <li>$ mvn package</li>
+   <li>$ java -jar target/radiograph-service-0.0.1-SNAPSHOT.jar</li>
 </lo>
 
 <strong>I have moved the UI implementation to another repo. Clone the new UI repo</strong>
