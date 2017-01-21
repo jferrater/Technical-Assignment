@@ -400,7 +400,7 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
+```
 <br>
 <h4>12) Creating new doctor</h4><br>
 <p>POST http://localhost:8888/doctors</p>
@@ -410,7 +410,7 @@ endpoints required Content-type application/json header.</p>
     {
         "Username": "Joffry"
     }
-    ```
+```
 <br>
 <strong>Response:</strong><br>
 ```javascript
