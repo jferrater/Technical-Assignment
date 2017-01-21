@@ -38,7 +38,7 @@ endpoints required Content-type application/json header.</p>
     <br>
     <strong>Response:</strong><br>
     <script language="javascript">
-    {
+    var json = '{
         "_links": {
             "radiographs": {
                 "href": "http://localhost:8888/radiographs"
@@ -53,7 +53,8 @@ endpoints required Content-type application/json header.</p>
                 "href": "http://localhost:8888/profile"
             }
         }
-    }
+    }';
+    document.write(json);
     </script>
     <br>
     <li><strong>Getting patients list</strong></li><br>
