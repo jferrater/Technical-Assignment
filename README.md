@@ -15,7 +15,8 @@ Technical assignment
 <lo>
    <li>$ git clone https://github.com/jferrater/Technical-Assignment.git</li>
    <li>$ cd radiograph-service</li>
-   <li>$ java -jar radiograph-service-0.0.1-SNAPSHOT.jar
+   <li>$ mvn package </li>
+   <li>$ java -jar target\radiograph-service-0.0.1-SNAPSHOT.jar
 </li>
 </lo>
 <br>
@@ -27,7 +28,7 @@ Technical assignment
    <li>$ npm start</li>
 </lu>
 </div>
-<h2>AVAILABLE ENDPOINTS</h2>
+<h3>AVAILABLE ENDPOINTS</h3>
 <p>Install Postman Chrome plugin or other REST client app to verify the endpoints. All
 endpoints required Content-type application/json header.</p>
 <br>
