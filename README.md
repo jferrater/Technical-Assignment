@@ -27,7 +27,6 @@ Technical assignment
    <li>$ npm start</li>
 </lu>
 </div>
-<div>
 <h4>AVAILABLE ENDPOINTS</h4>
 <p>Install Postman Chrome plugin or other REST client app to verify the endpoints. All
 endpoints required Content-type application/json header.</p>
@@ -518,4 +517,4 @@ endpoints required Content-type application/json header.</p>
     ```
     <br>
 </lu>
-</div>
+
