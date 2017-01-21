@@ -37,7 +37,7 @@ endpoints required Content-type application/json header.</p>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
     <strong>Response:</strong><br>
-    ```javascript
+    ```json
     {
         "_links": {
             "radiographs": {
