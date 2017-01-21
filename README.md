@@ -312,7 +312,7 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
+```
 <br>
 <h4>10) Getting all radiographs</h4><br>
 <p>GET http://localhost:8888/radiographs</p>
