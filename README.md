@@ -32,7 +32,7 @@ Technical assignment
 endpoints required Content-type application/json header.</p>
 <br>
 <lu>
-    <li>Root Service</li><br>
+<li><strong>Root Service</strong></li><br>
     <strong>GET   http://localhost:8888</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -516,6 +516,5 @@ endpoints required Content-type application/json header.</p>
         }
     }
     ```
-    <br>
 </lu>
 
