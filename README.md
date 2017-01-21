@@ -30,6 +30,7 @@ Technical assignment
 <h4>AVAILABLE ENDPOINTS</h4>
 <p>Install Postman Chrome plugin or other REST client app to verify the endpoints. All
 endpoints required Content-type application/json header.</p>
+<br>
 <lu>
     <li><strong>Root Service</strong></li><br>
     <strong>GET   http://localhost:8888</strong><br>
