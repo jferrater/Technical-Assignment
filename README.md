@@ -31,14 +31,14 @@ Technical assignment
 <p>Install Postman Chrome plugin or other REST client app to verify the endpoints. All
 endpoints required Content-type application/json header.</p>
 <br>
-<lu>
-<li><strong>Root Service</strong></li><br>
-    <strong>GET   http://localhost:8888</strong><br>
+<strong>Root Service</strong>
+<br>
+<strong>GET   http://localhost:8888</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
     <strong>Response:</strong><br>
-    <script language="javascript">
-    var json = '{
+    ```javascript
+    {
         "_links": {
             "radiographs": {
                 "href": "http://localhost:8888/radiographs"
@@ -53,11 +53,10 @@ endpoints required Content-type application/json header.</p>
                 "href": "http://localhost:8888/profile"
             }
         }
-    }';
-    document.write(json);
-    </script>
+    }
+    ```
     <br>
-    <li><strong>Getting patients list</strong></li><br>
+    <strong>Getting patients list</strong><br>
     <strong>GET   http://localhost:8888/patients</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -135,7 +134,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Adding new patient</strong></li><br>
+    <strong>Adding new patient</strong><br>
     <strong>POST   http://localhost:8888/patients</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -173,7 +172,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Getting patient details by id</strong></li><br>
+    <strong>Getting patient details by id</strong><br>
     <strong>GET  http://localhost:8888/patients/1</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -200,7 +199,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Deleting patient by id</strong></li><br>
+    <strong>Deleting patient by id</strong><br>
     <strong>DELETE  http://localhost:8888/patients/1</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -209,7 +208,7 @@ endpoints required Content-type application/json header.</p>
         200 OK
     ```
     <br>
-    <li><strong>Searching patient by Social Security Number</strong></li><br>
+    <strong>Searching patient by Social Security Number</strong><br>
     <strong>GET  http://localhost:8888/patients/search/patient?socialSecurityNumber=19850127</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -236,7 +235,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Searching patient by doctor's username</strong></li><br>
+    <strong>Searching patient by doctor's username</strong><br>
     <strong>GET  http://localhost:8888/patients/search/patients?doctor=James</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -272,7 +271,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Getting patient's radiograph history </strong></li><br>
+    <strong>Getting patient's radiograph history </strong><br>
     <strong>GET http://localhost:8888/patients/1/radiographs</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -294,7 +293,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Adding new patient's radiograph </strong></li><br>
+    <strong>Adding new patient's radiograph </strong><br>
     <strong>POST http://localhost:8888/patients/1/radiographs</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -323,7 +322,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Getting all radiographs</strong></li><br>
+    <strong>Getting all radiographs</strong><br>
     <strong>GET http://localhost:8888/radiographs</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -389,7 +388,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Getting radiograph details by id </strong></li><br>
+    <strong>Getting radiograph details by id </strong><br>
     <strong>GET http://localhost:8888/radiographs/1</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -413,7 +412,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Creating new doctor</strong></li><br>
+    <strong>Creating new doctor</strong><br>
     <strong>POST http://localhost:8888/doctors</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -439,7 +438,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Getting doctor's info</strong></li><br>
+    <strong>Getting doctor's info</strong><br>
     <strong>GET http://localhost:8888/doctors/4</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -458,7 +457,7 @@ endpoints required Content-type application/json header.</p>
     }
     ```
     <br>
-    <li><strong>Deleting doctor</strong></li><br>
+    <strong>Deleting doctor</strong><br>
     <strong>DELETE http://localhost:8888/doctors/4</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
@@ -517,5 +516,3 @@ endpoints required Content-type application/json header.</p>
         }
     }
     ```
-</lu>
-
