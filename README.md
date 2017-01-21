@@ -32,12 +32,12 @@ Technical assignment
 endpoints required Content-type application/json header.</p>
 <br>
 <lu>
-    <li><strong>Root Service</strong></li><br>
+    <li>Root Service</li><br>
     <strong>GET   http://localhost:8888</strong><br>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
     <strong>Response:</strong><br>
-    ```json
+    ```javascript
     {
         "_links": {
             "radiographs": {
