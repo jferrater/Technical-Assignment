@@ -34,7 +34,7 @@ endpoints required Content-type application/json header.
 <strong>1) Root service:</strong></p>
 <strong>GET http://localhost:8888<br>
 Header: Content-Type: application/json<br>
-Response:</strong>
+Response:</strong><br>
 ```javascript
 {
 "_links": {
@@ -53,6 +53,7 @@ Response:</strong>
 }
 }
 ```
+<br>
 2) Getting patients list:
 GET http://localhost:8888/patients
 Header: Content-Type: application/json
