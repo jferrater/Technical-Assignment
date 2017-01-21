@@ -267,7 +267,7 @@ endpoints required Content-type application/json header.</p>
 <br>
 <h4>8) Getting patient's radiograph history </h4><br>
 <p>GET http://localhost:8888/patients/1/radiographs</p>
-<p>Header: Content-Type: application/json</strong><p>
+<p>Header: Content-Type: application/json<p>
 <strong>Response:</strong><br>
 ```javascript
     {
