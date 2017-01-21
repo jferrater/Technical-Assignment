@@ -27,15 +27,15 @@ Technical assignment
    <li>$ npm start</li>
 </lu>
 </div>
-<div>
+
 <h4>AVAILABLE ENDPOINTS</h4>
 <p>Install Postman Chrome plugin or other REST client app to verify the endpoints. All
-endpoints required Content-type application/json header.</p>
+endpoints required Content-type application/json header.</p><br>
 <lu>
 <li>Root Service</li><br>
-<strong>GET   http://localhost:8888</strong>
-<strong>Header: Content-Type: application/json</strong>
-<strong>Response:</strong>
+<strong>GET   http://localhost:8888</strong><br>
+<strong>Header: Content-Type: application/json</strong><br>
+<strong>Response:</strong><br>
 ```javascript
 {
 	"_links": {
@@ -54,4 +54,4 @@ endpoints required Content-type application/json header.</p>
 	}
 }
 ```
-</div>
+
