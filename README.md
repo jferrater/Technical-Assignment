@@ -27,17 +27,15 @@ Technical assignment
    <li>$ npm start</li>
 </lu>
 </div>
-<h4>AVAILABLE ENDPOINTS</h4>
+<h2>AVAILABLE ENDPOINTS</h2>
 <p>Install Postman Chrome plugin or other REST client app to verify the endpoints. All
 endpoints required Content-type application/json header.</p>
 <br>
-<strong>Root Service</strong>
-<br>
-<strong>GET   http://localhost:8888</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+<h4>1) Root Service</h4><br>
+<p>GET   http://localhost:8888</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     {
         "_links": {
             "radiographs": {
@@ -54,14 +52,14 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Getting patients list</strong><br>
-    <strong>GET   http://localhost:8888/patients</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<h4>2) Getting patients list</h4><br>
+<br>
+<p>GET   http://localhost:8888/patients</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     {
         "_embedded": {
             "patients": [{
@@ -132,14 +130,13 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Adding new patient</strong><br>
-    <strong>POST   http://localhost:8888/patients</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Request:</strong><br>
-    ```javascript
+```
+<br>
+<h4>3) Adding new patient</h4><br>
+<p>POST   http://localhost:8888/patients</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Request:</strong><br>
+```javascript
     {
 	    "SocialSecurityNumber": "19800912",
 	    "FirstName": "Jolly Jae",
@@ -147,11 +144,11 @@ endpoints required Content-type application/json header.</p>
 	    "Age": 36,
 	    "Doctor": "Bond"
     }
-    ```
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
-    {
+```
+<br>
+<strong>Response:</strong><br>
+```javascript
+   {
         "Id": 4,
         "SocialSecurityNumber": "19800912",
         "FirstName": "Jolly Jae",
@@ -170,14 +167,13 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Getting patient details by id</strong><br>
-    <strong>GET  http://localhost:8888/patients/1</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<h4>4) Getting patient details by id</h4><br>
+<p>GET  http://localhost:8888/patients/1</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     {
         "Id": 1,
         "SocialSecurityNumber": "19850127",
@@ -197,23 +193,21 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Deleting patient by id</strong><br>
-    <strong>DELETE  http://localhost:8888/patients/1</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
-        200 OK
-    ```
-    <br>
-    <strong>Searching patient by Social Security Number</strong><br>
-    <strong>GET  http://localhost:8888/patients/search/patient?socialSecurityNumber=19850127</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<h4>5) Deleting patient by id</h4><br>
+<p>DELETE  http://localhost:8888/patients/1</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
+     200 OK
+```
+<br>
+<h4>6) Searching patient by Social Security Number</h4><br>
+<p>GET  http://localhost:8888/patients/search/patient?socialSecurityNumber=19850127</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     {
         "Id": 1,
         "SocialSecurityNumber": "19850127",
@@ -233,14 +227,13 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Searching patient by doctor's username</strong><br>
-    <strong>GET  http://localhost:8888/patients/search/patients?doctor=James</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<h4>7) Searching patient by doctor's username</h4><br>
+<p>GET  http://localhost:8888/patients/search/patients?doctor=James</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     {
         "_embedded": {
             "patients": [{
@@ -269,14 +262,13 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Getting patient's radiograph history </strong><br>
-    <strong>GET http://localhost:8888/patients/1/radiographs</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<h4>8) Getting patient's radiograph history </h4><br>
+<p>GET http://localhost:8888/patients/1/radiographs</p>
+<p>Header: Content-Type: application/json</strong><p>
+<strong>Response:</strong><br>
+```javascript
     {
         "_embedded": {
             "radiographs": [{
@@ -291,22 +283,21 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Adding new patient's radiograph </strong><br>
-    <strong>POST http://localhost:8888/patients/1/radiographs</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Request:</strong><br>
-    ```javascript
+```
+<br>
+<h4>9) Adding new patient's radiograph </h4><br>
+<p>POST http://localhost:8888/patients/1/radiographs</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Request:</strong><br>
+```javascript
     {
         "Reason": "Back ache",
        "Description": "Another test"
     }
-    ```
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<strong>Response:</strong><br>
+```javascript
     {
         "Reason": "Back ache",
         "Description": "Another test",
@@ -321,13 +312,12 @@ endpoints required Content-type application/json header.</p>
         }
     }
     ```
-    <br>
-    <strong>Getting all radiographs</strong><br>
-    <strong>GET http://localhost:8888/radiographs</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+<br>
+<h4>10) Getting all radiographs</h4><br>
+<p>GET http://localhost:8888/radiographs</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     {
     "_embedded" : {
         "radiographs" : [ {
@@ -386,15 +376,14 @@ endpoints required Content-type application/json header.</p>
         }
       }
     }
-    ```
-    <br>
-    <strong>Getting radiograph details by id </strong><br>
-    <strong>GET http://localhost:8888/radiographs/1</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
-    {
+```
+<br>
+<h4>11) Getting radiograph details by id </h4><br>
+<p>GET http://localhost:8888/radiographs/1</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
+   {
         "Reason": "Not feeling well",
         "Description": "Radiograph of Joffry",
         "DateOfTest": "2017-01-17",
@@ -411,20 +400,19 @@ endpoints required Content-type application/json header.</p>
         }
     }
     ```
-    <br>
-    <strong>Creating new doctor</strong><br>
-    <strong>POST http://localhost:8888/doctors</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Request:</strong><br>
-    ```javascript
+<br>
+<h4>12) Creating new doctor</h4><br>
+<p>POST http://localhost:8888/doctors</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Request:</strong><br>
+```javascript
     {
         "Username": "Joffry"
     }
     ```
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+<br>
+<strong>Response:</strong><br>
+```javascript
     {
         "Username": "Joffry",
         "_links": {
@@ -436,14 +424,13 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Getting doctor's info</strong><br>
-    <strong>GET http://localhost:8888/doctors/4</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<h4>13) Getting doctor's info</h4><br>
+<p>GET http://localhost:8888/doctors/4</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     {
         "Username": "Joffry",
         "_links": {
@@ -455,23 +442,21 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
-    <br>
-    <strong>Deleting doctor</strong><br>
-    <strong>DELETE http://localhost:8888/doctors/4</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<h4>14) Deleting doctor</h4><br>
+<p>DELETE http://localhost:8888/doctors/4</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     200 OK
-    ```
-    <br>
-    <li><strong>Getting ALL doctors</strong></li><br>
-    <strong>GET http://localhost:8888/doctors</strong><br>
-    <strong>Header: Content-Type: application/json</strong><br>
-    <br>
-    <strong>Response:</strong><br>
-    ```javascript
+```
+<br>
+<h4>15) Getting ALL doctors</h4><br>
+<p>GET http://localhost:8888/doctors</p>
+<p>Header: Content-Type: application/json</p>
+<strong>Response:</strong><br>
+```javascript
     {
         "_embedded": {
             "doctors": [{
@@ -515,4 +500,4 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
+ ```
