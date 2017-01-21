@@ -37,7 +37,7 @@ endpoints required Content-type application/json header.</p>
     <strong>Header: Content-Type: application/json</strong><br>
     <br>
     <strong>Response:</strong><br>
-    ```javascript
+    <script language="javascript">
     {
         "_links": {
             "radiographs": {
@@ -54,7 +54,7 @@ endpoints required Content-type application/json header.</p>
             }
         }
     }
-    ```
+    </script>
     <br>
     <li><strong>Getting patients list</strong></li><br>
     <strong>GET   http://localhost:8888/patients</strong><br>
