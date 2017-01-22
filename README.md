@@ -16,8 +16,8 @@ Technical assignment
    <li>$ git clone https://github.com/jferrater/Technical-Assignment.git</li>
    <li>$ cd radiograph-service</li>
    <li>$ mvn package </li>
-   <li>$ java -jar target\radiograph-service-0.0.1-SNAPSHOT.jar
-</li>
+   <li>$ java -jar target/radiograph-service-0.0.1-SNAPSHOT.jar</li>
+   <li>Verify the service running at localhost:8888</li>
 </lo>
 <br>
 <strong>UI is implemented on a separate repo.</strong>
@@ -26,6 +26,7 @@ Technical assignment
    <li> $ cd UI</li>
    <li>$ npm install</li>
    <li>$ npm start</li>
+   <li>Verify UI running at localhost:3000</li>
 </lu>
 </div>
 <h3>AVAILABLE ENDPOINTS</h3>
