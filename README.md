@@ -231,7 +231,7 @@ endpoints required Content-type application/json header.</p>
     }
 ```
 <br>
-<h4>7) Searching patient by doctor's username</h4><br>
+<h4>7) Searching doctor's patients by doctor's username</h4><br>
 <p>GET  http://localhost:8888/patients/search/patients?doctor=James</p>
 <p>Header: Content-Type: application/json</p>
 <strong>Response:</strong><br>
