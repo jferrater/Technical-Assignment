@@ -11,7 +11,16 @@ Technical assignment
 </div>
 
 <div>
-<h4>Running the project</h4>
+<h4>Running the project using Docker container</h4>
+<lo>
+   <li>$ git clone https://github.com/jferrater/Technical-Assignment.git</li>
+   <li>$ cd radiograph-service</li>
+   <li>$ mvn package </li>
+   <li>$ docker build radiograph-service</li>
+   <li>$ docker run -d --name radiograph-service -p 127.0.0.1:8888:8888 radiograph-service</li>
+   <li>Verify the service running at localhost:8888</li>
+</lo>
+<h4>Running the project locally</h4>
 <lo>
    <li>$ git clone https://github.com/jferrater/Technical-Assignment.git</li>
    <li>$ cd radiograph-service</li>
