@@ -1,5 +1,5 @@
 # Technical-Assignment
-Technical assignment
+This is a fullstack project with web services in the backend and AngularJS as frontend consuming the webservices.
 
 <div>
 <h4>Required dependencies</h4>
