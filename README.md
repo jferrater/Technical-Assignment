@@ -1,4 +1,4 @@
-# Technical-Assignment
+# Radiograph service - Spring boot application
 This is a fullstack project with web services in the backend and AngularJS as frontend consuming the webservices.
 
 <div>
